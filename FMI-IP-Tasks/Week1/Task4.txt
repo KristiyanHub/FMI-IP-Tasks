@@ -1,0 +1,18 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    cout << "Enter a three digit number" << endl;
+    int number;
+    cin >> number;
+    
+    int first = number / 100;
+    int second = (number / 10) % 10;
+    int third = number % 10;
+    
+    int result = first + second + third;
+    
+    cout << "The sum of it's numbers is: " << result << endl;
+}

@@ -1,0 +1,25 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    cout << "Enter two real numbers" << endl;
+    double realOne, realTwo;
+    cin >> realOne;
+    cin >> realTwo;
+    
+    if(realOne > 0 && realTwo > 0)
+    {
+        cout << "Both are positive" << endl;
+    }
+    else if((realOne > 0 && realTwo < 0) || (realOne < 0 && realTwo > 0))
+    {
+        cout << "One of them is positive" << endl;
+    }
+    else
+    {
+        cout << "None are positive" << endl;
+    }
+    
+}

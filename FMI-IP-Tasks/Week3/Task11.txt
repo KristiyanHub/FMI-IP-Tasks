@@ -1,0 +1,22 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    cout << "Enter how many meters does Traicho need to paint" << endl;
+    int n;
+    cin >> n;
+    
+    int metersPassed;
+    
+    if(n > 0)
+    {
+       metersPassed = n * (n+1);
+       cout << metersPassed;
+    }
+    else
+    {
+        cout << "There can't be a wall that has a wight smaller or equal zero" << endl;
+    }
+}

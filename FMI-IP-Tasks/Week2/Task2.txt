@@ -1,0 +1,19 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    cout << "Enter two numbers" << endl;
+    int fitrsNumber, secondNumber;
+    cin >> fitrsNumber;
+    cin >> secondNumber;
+    
+    int sum = fitrsNumber + secondNumber;
+    int dif = fitrsNumber - secondNumber;
+    int prod = fitrsNumber * secondNumber;
+    
+    cout << "The sum is: " << sum << endl; 
+    cout << " the difference is: " << dif << endl;
+    cout << " the product is: " << prod << endl;
+}

@@ -1,0 +1,20 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    cout << "Enter a symbol and lets see if it is a letter" << endl;
+    char symbol;
+    cin >> symbol;
+    
+    if(symbol >= 65 && symbol <= 122)
+    {
+        cout << "It is a letter";
+    }
+    else
+    {
+        cout << "Not a letter";
+    }
+    
+}

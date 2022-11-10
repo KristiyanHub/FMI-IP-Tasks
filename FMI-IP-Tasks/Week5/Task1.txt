@@ -1,0 +1,16 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    cout << "Enter a two digit number" << endl;
+    int number;
+    
+    do
+    {
+        cin >> number;
+    }
+    while (number <= 9);
+    
+}

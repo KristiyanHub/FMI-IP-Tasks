@@ -1,0 +1,21 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    cout << "Enter seconds to be turned into days, hours and minutes" << endl;
+    int secs;
+    cin >> secs;
+    
+    int days = secs / 86400;
+    secs = secs - (days * 86400);
+    
+    int hours = secs / 3600;
+    secs = secs - (hours * 3600);
+    
+    int minutes = secs / 60;
+    secs = secs - (minutes * 60);
+    
+    cout << days << " days, " << hours << " hours, " << minutes << " minutes, " << secs << " seconds" << endl;
+}

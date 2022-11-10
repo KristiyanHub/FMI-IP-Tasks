@@ -1,0 +1,27 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    cout << "Enter a number and if it is a digit we will check how many sircles are in it" << endl;
+    int number;
+    cin >> number;
+    
+    if(number > 9 && number > 0)
+    {
+        cout << "Not a digit";
+    }
+    else if(number == 1 || number == 2 || number == 3 || number == 4 || number == 5 || number == 7)
+    {
+        cout << "Zero Os in it";
+    }
+    else if(number == 6 || number == 9 || number == 0 )
+    {
+      cout << "One O in it";  
+    }
+    else
+    {
+       cout << "Two Os in it"; 
+    }
+}

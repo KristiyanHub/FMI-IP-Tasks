@@ -1,0 +1,19 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    double sideOfSquare = 4.0;
+    double apotheman = 6.0;
+    double h = 4.0;
+    
+    double sizeOfSquare = sideOfSquare * sideOfSquare;
+    double perimeterOfSuare = 4 * sideOfSquare;
+    
+    double volumeOfPyramid = (1.0/3.0)* (sizeOfSquare/h);
+    
+    double sizeOfPyramid = (sizeOfSquare*apotheman)/2 + sizeOfSquare;
+    
+    cout << "The volume of pyramid is: " << volumeOfPyramid << " The size of piramid is: " << sizeOfPyramid << endl;
+}

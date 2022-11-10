@@ -1,0 +1,25 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    cout << "Enter the two sides of a chocolate" << endl;
+    int firstSide, secondSide;
+    cin >> firstSide;
+    cin >> secondSide;
+    
+    cout << "Enter how many blocks do you want" << endl;
+    int wantedBlocks;
+    cin >> wantedBlocks;
+    
+    if((wantedBlocks % firstSide == 0) || (wantedBlocks % secondSide == 0))
+    {
+        cout << "YES";
+    }
+    else
+    {
+        cout << "NO";
+    }
+    
+}

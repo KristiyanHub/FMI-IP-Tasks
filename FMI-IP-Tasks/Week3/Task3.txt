@@ -1,0 +1,24 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    cout << "Enter two numbers" << endl;
+    int start, end;
+    cin >> start;
+    cin >> end;
+    
+    cout << "Enter a third number and lets see if it is between the first two ";
+    int random;
+    cin >> random;
+    
+    if(random >= start && random <= end)
+    {
+        cout << "The numbers is in the diapason" << endl;
+    }
+    else
+    {
+        cout << "The numbers is outside the diapason" << endl;
+    }
+}

@@ -1,0 +1,26 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    cout << "Enter if Traicho has beer in the fridge or if he has rakija and ice with it (Only 1 for true and 0 for false)" << endl;
+    int beerInFridge, rakijaInFridge, iceInFridge;
+    cin >> beerInFridge;
+    cin >> rakijaInFridge;
+    cin >> iceInFridge;
+    
+    if(beerInFridge == 1)
+    {
+        cout << "Drinks at home" << endl;
+    }
+    else if(rakijaInFridge == 1 && iceInFridge == 1)
+    {
+        cout << "Drinks at home" << endl;
+    }
+    else
+    {
+        cout << "Buys cold beer" << endl;
+    }
+    
+}

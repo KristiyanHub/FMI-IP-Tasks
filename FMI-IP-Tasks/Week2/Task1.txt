@@ -1,0 +1,16 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    cout << "Enter how many apples, pears and banans do you want" << endl;
+    int apples, pears, banans;
+    cin >> apples;
+    cin >> pears;
+    cin >> banans;
+    
+    cout << "Don't foreget to by " << apples << " apples, " << pears << " pears, " << banans << " banas";
+    
+    
+}

@@ -1,0 +1,17 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    cout << "Enter two numbers" << endl;
+    int first, second;
+    cin >> first;
+    cin >> second;
+    
+    int temporary = first;
+    first = second;
+    second = temporary;
+    
+    cout << "The reverse is: " << first << " and the second: " << second;
+}

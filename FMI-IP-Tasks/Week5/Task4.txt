@@ -1,0 +1,23 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int first;
+    int second;
+    int third;
+    
+    
+    for(int i = 100; i <= 999; i++)
+    {
+        first = i / 100;
+        second = (i / 10) % 10;
+        third = i % 10;
+        
+        if(first != second && first != third && second != third && third != first)
+        {
+            cout << i << endl;
+        }
+    }
+}

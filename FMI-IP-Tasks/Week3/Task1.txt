@@ -1,0 +1,24 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    cout << "Enter two numbers" << endl;
+    int first, second;
+    cin >> first;
+    cin >> second;
+    
+    if(first > second)
+    {
+        cout << first << " is bigger";
+    }
+    else if(first == second)
+    {
+       cout << "They are the same"; 
+    }
+    else
+    {
+        cout << second << " is bigger";
+    }
+}

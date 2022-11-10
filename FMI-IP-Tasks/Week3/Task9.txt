@@ -1,0 +1,28 @@
+#include <iostream>
+#include <cmath>
+
+using namespace std;
+
+int main()
+{
+    cout << "Enter an amount of money" << endl;
+    double money;
+    cin >> money;
+    
+    cout << "Enter a type of currency (E = euro B = bgn)" << endl;
+    char ownCurrency;
+    cin >> ownCurrency;
+    
+    if(ownCurrency == 'B')
+    {
+        cout << "You have: " << money / 1.93 << " euro" << endl;
+    }
+    else if(ownCurrency == 'E')
+    {
+        cout << "You have: " << money * 1.93 << " bgn" << endl;
+    }
+    else
+    {
+        cout << "Not money";
+    }
+}

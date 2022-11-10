@@ -1,0 +1,44 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+//Part 1
+    cout << "Enter the two side in order to draw figure" << endl;
+    int n, m;
+    cin >> n;
+    cin >> m;
+    
+    int counter = 0;
+    
+    for(int i = 1; i <= (n*m); i++)
+    {
+        cout << "*";
+        counter++;
+        
+        if(counter >= n)
+        {
+            counter = 0;
+            cout << "" << endl;
+        }
+    }
+//Part 2
+    cout << "Enter the side in order to draw figure" << endl;
+    int n1;
+    cin >> n1;
+    
+    int counter2 = 0;
+    
+    for(int i = 1; i <= (n1*n1); i++)
+    {
+        cout << "*";
+        counter2++;
+        
+        if(counter2 >= n1)
+        {
+            counter2 = 0;
+            cout << "" << endl;
+        }
+    }
+}

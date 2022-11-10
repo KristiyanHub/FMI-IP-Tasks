@@ -1,0 +1,15 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    cout << "Enter degrees in fahrenheit" << endl;
+    double degrees;
+    cin >> degrees;
+    
+    double toCelsius = ((degrees - 32) * 5) / 9;
+    double toKelvin = toCelsius + 274.15;
+    
+    cout << "In celsius it is: " << toCelsius << " and in kelvin it is: " << toKelvin << endl;
+}

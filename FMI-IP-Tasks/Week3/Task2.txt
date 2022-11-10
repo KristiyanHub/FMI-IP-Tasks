@@ -1,0 +1,19 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    cout << "Enter a number and lets see if it is a month: ";
+    int month;
+    cin >> month;
+    
+    if(month <= 12 && month > 0)
+    {
+        cout << "It's a month!";
+    }
+    else
+    {
+        cout << "Not a month!";
+    }
+}

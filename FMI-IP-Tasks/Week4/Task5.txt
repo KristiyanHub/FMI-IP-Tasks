@@ -1,0 +1,372 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+//5.1
+   cout << "Enter a number ";
+   int first, second;
+   cin >> first;
+
+   
+   bool canBeDividedByFourOrSeven = false;
+   if(first % 4 == 0 || first % 7 == 0)
+   {
+       canBeDividedByFourOrSeven = true;
+       cout << boolalpha << canBeDividedByFourOrSeven;
+   }
+   else
+   {
+        cout << boolalpha << canBeDividedByFourOrSeven;  
+   }
+
+//5.2
+   cout << "Enter the variables for an equation of this type: ax^2 + bx + c = 0" << endl;
+   int a, b, c;
+   cin >> a;
+   cin >> b;
+   cin >> c;
+   
+   int discriminant = (b*b) - (4*a*c);
+   bool doesntHaveSolution = true;
+   
+   if(discriminant < 0)
+   {
+       cout << boolalpha << doesntHaveSolution << endl;
+   }
+   else
+   {
+       doesntHaveSolution = false;
+       cout << boolalpha << doesntHaveSolution << endl;
+   }
+
+//5.3
+   cout << "Enter coordinates of a point" << endl;
+   int x1, y1;
+   cin >> x1;
+   cin >> y1;
+   
+   bool isInsideCircle = false;
+   
+   if((x1 >= -5 && x1 <= 5) && (y1 >= -4 && y1 <= 6))
+   {
+       isInsideCircle = true;
+       cout << boolalpha << isInsideCircle;
+   }
+   else
+   {
+      cout << boolalpha << isInsideCircle; 
+   }
+
+//5.4
+   cout << "Enter coordinates of a point" << endl;
+   int x2, y2;
+   cin >> x2;
+   cin >> y2;
+   
+   cout << "Enter coordinates for a center of a cirlce and its' radius" << endl;
+   int xCirlce, yCircle, radius;
+   cin >> xCirlce;
+   cin >> yCircle;
+   cin >> radius;
+   
+   int radiusOnPositiveX = xCirlce + radius;
+   int radiusOnPositiveY = yCircle + radius;
+   
+   int radiusOnNegativeX = xCirlce - radius;
+   int radiusOnNegativeY = yCircle - radius;
+   
+   bool isInsideCircle2 = false;
+   
+   if((x2 >= radiusOnNegativeX && x2 <= radiusOnPositiveX) && (y2 >= radiusOnNegativeY && y2 <= radiusOnPositiveY))
+   {
+       isInsideCircle2 = true;
+       cout << boolalpha << isInsideCircle2;
+   }
+   else
+   {
+      cout << boolalpha << isInsideCircle2; 
+   }
+
+//5.5
+   cout << "Enter coordinates of a point" << endl;
+   int x3, y3;
+   cin >> x3;
+   cin >> y3;
+   
+   bool isInsideQuadrantIII = false;
+   
+   if((x3 >= -5 && x3 <= 0) && (y3 >= -5 && y3 <= 0))
+   {
+       isInsideQuadrantIII = true;
+       cout << boolalpha << isInsideQuadrantIII;
+   }
+   else
+   {
+      cout << boolalpha << isInsideQuadrantIII; 
+   }
+
+//5.6
+   cout << "Enter coordinates of a point" << endl;
+   int x4, y4;
+   cin >> x4;
+   cin >> y4;
+   
+   bool isInTheGoldylockZone = false;
+   
+   if(((x4 >= 5 && x4 <= 10) || (x4 >= -5 && x4 <= -10)) && ((y4 >= 5 && y4 <= 10) || (y4 >= -5 && y4 <= -10)))
+   {
+       isInTheGoldylockZone = true;
+       cout << boolalpha << isInTheGoldylockZone;
+   }
+   else
+   {
+      cout << boolalpha << isInTheGoldylockZone; 
+   }
+
+//5.7
+   cout << "Is our n between 0 and 1?" << endl;
+   int n;
+   cin >> n;
+   
+   bool isInThePerimiter = true;
+   
+   if(n >= 0 && n <= 1)
+   {
+       cout << boolalpha << isInThePerimiter;
+   }
+   else
+   {
+       isInThePerimiter = false;
+       cout << boolalpha << isInThePerimiter;
+   }
+
+//5.8
+   cout << "Enter a number" << endl;
+   int m;
+   cin >> m;
+   
+   cout << "Now enter three more" << endl;
+   int n1, n2, n3;
+   cin >> n1;
+   cin >> n2;
+   cin >> n3;
+   
+   bool isBiggestOfThree = true;
+   
+   if(n1 > n2 && n1 > n3)
+   {
+      if(m == n1)
+      {
+        cout << boolalpha << isBiggestOfThree;
+      }
+      else
+      {
+        isBiggestOfThree = false;  
+        cout << boolalpha << isBiggestOfThree;  
+      }
+   }
+   else if(n2 > n1 && n2 > n3)
+   {
+       if(m == n2)
+      {
+        cout << boolalpha << isBiggestOfThree;
+      }
+      else
+      {
+        isBiggestOfThree = false;  
+        cout << boolalpha << isBiggestOfThree;  
+      }
+   }
+   else if(n3 > n2 && n3 > n1)
+   {
+      if(m == n3)
+      {
+        cout << boolalpha << isBiggestOfThree;
+      }
+      else
+      {
+        isBiggestOfThree = false;  
+        cout << boolalpha << isBiggestOfThree;  
+      }
+   }
+   else
+   {
+        isBiggestOfThree = false;  
+        cout << boolalpha << isBiggestOfThree;;
+   }
+//5.9
+   cout << "Enter a number" << endl;
+   int m1;
+   cin >> m1;
+   
+   cout << "Now enter three more" << endl;
+   int uno, due, tre;
+   cin >> uno;
+   cin >> due;
+   cin >> tre;
+   
+   bool isBiggestOfThree = false;
+   
+   if(uno > due && uno > tre)
+   {
+      if(m1 == uno)
+      {
+        cout << boolalpha << isBiggestOfThree;
+      }
+      else
+      {
+        isBiggestOfThree = true;  
+        cout << boolalpha << isBiggestOfThree;  
+      }
+   }
+   else if(due > uno && due > tre)
+   {
+       if(m1 == due)
+      {
+        cout << boolalpha << isBiggestOfThree;
+      }
+      else
+      {
+        isBiggestOfThree = true;  
+        cout << boolalpha << isBiggestOfThree;  
+      }
+   }
+   else if(tre > due && tre > uno)
+   {
+      if(m1 == tre)
+      {
+        cout << boolalpha << isBiggestOfThree;
+      }
+      else
+      {
+        isBiggestOfThree = true;  
+        cout << boolalpha << isBiggestOfThree;  
+      }
+   }
+   else
+   {
+        isBiggestOfThree = true;  
+        cout << boolalpha << isBiggestOfThree;
+   }
+
+//5.10
+   cout << "Enter the value of two variables (it can be 1 for true or 0 for false)" << endl;
+   bool xn, yn;
+   cin >> xn;
+   cin >> yn;
+   
+   bool atleastOneIsTrue = false;
+   
+   if(xn == 1 || yn == 1)
+   {
+       atleastOneIsTrue = true;
+       cout << boolalpha << atleastOneIsTrue;
+   }
+   else
+   {
+       cout << boolalpha << atleastOneIsTrue;
+   }
+
+//5.11
+   cout << "Enter the value of two variables (it can be 1 for true or 0 for false)" << endl;
+   bool xm, ym;
+   cin >> xm;
+   cin >> ym;
+   
+   bool bothAreTrue = false;
+   
+   if(xm == 1 && ym == 1)
+   {
+       bothAreTrue = true;
+       cout << boolalpha << bothAreTrue;
+   }
+   else
+   {
+       cout << boolalpha << bothAreTrue;
+   }
+
+//5.12
+   cout << "Enter three numbers" << endl;
+   int one, two, three;
+   cin >> one;
+   cin >> two;
+   cin >> three;
+   
+   bool allAreNegative = true;
+   
+   if(one <= 0 && two <= 0 && three <= 0)
+   {
+       
+       cout << boolalpha << allAreNegative;
+   }
+   else
+   {
+       allAreNegative = false;
+       cout << boolalpha << allAreNegative;
+   }
+
+//5.13
+   cout << "Enter a three digit numbers" << endl;
+   unsigned int threeDigitNumber;
+   cin >> threeDigitNumber;
+   
+   int firstDigit = threeDigitNumber / 100;
+   int secondDigit = (threeDigitNumber / 10) % 10;
+   int thirdDigit = threeDigitNumber % 10;
+   
+   bool hasSeven = true;
+   
+   if(firstDigit == 7 || secondDigit == 7 || thirdDigit == 7)
+   {
+       cout << boolalpha << hasSeven;
+   }
+   else
+   {
+       hasSeven = false;
+       cout << boolalpha << hasSeven;
+   }
+
+//5.14
+   cout << "Enter a three digit numbers" << endl;
+   unsigned int threeDigitNumber2;
+   cin >> threeDigitNumber2;
+   
+   int firstDigit2 = threeDigitNumber2 / 100;
+   int secondDigit2 = (threeDigitNumber2 / 10) % 10;
+   int thirdDigit2 = threeDigitNumber2 % 10;
+   
+   bool allDigitsDifferent = true;
+   
+   if((firstDigit2 != secondDigit2 && firstDigit2 != thirdDigit2) && (secondDigit2 != firstDigit2 && secondDigit2 != thirdDigit2))
+   {
+       cout << boolalpha << allDigitsDifferent;
+   }
+   else
+   {
+       allDigitsDifferent = false;
+       cout << boolalpha << allDigitsDifferent;
+   }
+
+//5.15
+   cout << "Enter a three digit numbers" << endl;
+   unsigned int threeDigitNumber3;
+   cin >> threeDigitNumber3;
+   
+   int firstDigit3 = threeDigitNumber3 / 100;
+   int secondDigit3 = (threeDigitNumber3 / 10) % 10;
+   int thirdDigit3 = threeDigitNumber3 % 10;
+   
+   bool atleastTwoDigitsAreTheSame = true;
+   
+   if((firstDigit3 == secondDigit3 || firstDigit3 == thirdDigit3) || (secondDigit3 == firstDigit3 || secondDigit3 == thirdDigit3) )
+   {
+       cout << boolalpha << atleastTwoDigitsAreTheSame;
+   }
+   else
+   {
+       atleastTwoDigitsAreTheSame = false;
+       cout << boolalpha << atleastTwoDigitsAreTheSame;
+   }
+}

@@ -1,0 +1,19 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    cout << "Enter dimensions of bathroom floor" << endl;
+    int n, m;
+    cin >> n;
+    cin >> m;
+    
+    cout << "Enter dimensions of a tile" << endl;
+    int tile;
+    cin >> tile;
+    
+    int neededTiles = (m*n)/(tile*tile);
+    
+    cout << "We need this many tiles: " << neededTiles;
+}

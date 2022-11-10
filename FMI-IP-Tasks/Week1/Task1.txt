@@ -1,0 +1,16 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    cout << "Enter three numbers" << endl;
+    int firstNumb, secondNum, thirdNum;
+    cin >> firstNumb;
+    cin >> secondNum;
+    cin >> thirdNum;
+    
+    int result = firstNumb + secondNum + thirdNum;
+    
+    cout << result << endl;
+}
