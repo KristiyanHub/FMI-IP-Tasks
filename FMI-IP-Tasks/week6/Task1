@@ -1,1 +1,20 @@
+#include <iostream>
 
+using namespace std;
+
+int biggestOfTwo(int firstNum, int secondNum)
+{
+   if(firstNum > secondNum)
+   {
+       return firstNum;
+   }
+   else
+   {
+       return secondNum;
+   }
+}
+
+int main()
+{
+    cout << biggestOfTwo(2,1) << endl;
+}
