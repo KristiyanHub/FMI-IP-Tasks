@@ -1,0 +1,35 @@
+#include <iostream>
+
+using namespace std;
+
+bool powerOfTwo(int number)
+{
+    if(number == 0)
+    {
+        return false;
+    }
+    
+    while (number != 1) 
+    {
+        if (number % 2 != 0)
+        {
+            return false;
+        }
+        number = number / 2;
+    }
+    return true;
+}
+
+int main()
+{
+    cout << "Enter a positive number" << endl;
+    int number;
+    
+    do
+    {
+       cin >> number; 
+    }
+    while(number <= 0);
+    
+    cout << boolalpha << powerOfTwo(number);
+}
