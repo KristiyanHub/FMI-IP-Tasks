@@ -16,18 +16,6 @@ bool isPrime(int number)
     return true;
 }
 
-int primeNumbersLessThanHundred()
-{
-    for(int i = 2; i <= 100; i++)
-    {
-        if(isPrime(i))
-        {
-            return i;
-        }
-    }
-    return 0;
-}
-
 void printPrime()
 {
     for(int i = 2; i <= 100; i++)
