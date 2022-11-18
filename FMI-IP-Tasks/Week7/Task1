@@ -18,6 +18,10 @@ int main()
     for(int i = 0; i <= sizeOfMassive; i++)
     {
         cin >> arr[i];
+    }
+    
+    for(int i = 0; i <= sizeOfMassive; i++)
+    {
         if(arr[i] % 2 == 0)
         {
             cout << "Even: " << arr[i] << ' ';
