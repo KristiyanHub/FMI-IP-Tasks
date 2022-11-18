@@ -6,8 +6,8 @@ const int MAX_SIZE = 100;
 
 int lenght(char arr[])
 {
-    int i;
-    int counter;
+    int i = 0;
+    int counter = 0;
     
     while(arr[i] != '\0')
     {
@@ -19,8 +19,6 @@ int lenght(char arr[])
 
 int main()
 {
-    char arr[MAX_SIZE];
-    cin.getline[];
-    lenght(arr);
+    cout << lenght("arr");
     return 0;
 }
