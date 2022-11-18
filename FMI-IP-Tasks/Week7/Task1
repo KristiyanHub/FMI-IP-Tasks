@@ -1,0 +1,28 @@
+#include <iostream>
+
+using namespace std;
+
+const int MAX_SIZE = 100;
+
+int main()
+{
+    cout << "Enter how many numbers you want to enter" << endl;
+    int sizeOfMassive;
+    cin >> sizeOfMassive;
+    
+    int arr[MAX_SIZE];
+    
+    
+    
+    cout << "Now enter the numbers" << endl;
+    for(int i = 0; i <= sizeOfMassive; i++)
+    {
+        cin >> arr[i];
+        if(arr[i] % 2 == 0)
+        {
+            cout << "Even: " << arr[i] << ' ';
+        }
+    }
+    
+    return 0;
+}
