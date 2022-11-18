@@ -1,0 +1,35 @@
+#include <iostream>
+
+using namespace std;
+
+const int MAX_SIZE = 100;
+
+int size(char arr[])
+{
+   int sizeOfElements = 0;
+   
+   while(arr[sizeOfElements] != '\0')
+   {
+       sizeOfElements++;
+   }
+   
+   return sizeOfElements;
+}
+
+bool isPalindrome(char arr[])
+{
+    for(int i = 0; i < size(arr); i++)
+    {
+        if(arr[i] != size(arr) - 1 - i)
+        {
+            return false;
+        }
+    }
+    return true;
+}
+
+int main()
+{
+    cout << isPalindrome("ioi");
+    return 0;
+}
