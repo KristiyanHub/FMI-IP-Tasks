@@ -1,0 +1,27 @@
+#include <iostream>
+
+using namespace std;
+
+const int MAX_SIZE = 100;
+
+void multyplicationOfElements(int multyplicator, int numberOfElements)
+{
+    int arr[100];
+    
+    for(int i = 1; i <= numberOfElements; i++)
+    {
+        cin >> arr[i];
+    }
+    
+    for(int i = 1; i <= numberOfElements; i++)
+    {
+       cout << arr[i] *  multyplicator << " ";
+    }
+}
+
+int main()
+{
+    cout << "We are multyplying by 2, 3 elements" << endl;
+    multyplicationOfElements(2, 3);
+    return 0;
+}
