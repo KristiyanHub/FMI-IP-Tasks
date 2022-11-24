@@ -20,7 +20,7 @@ bool isPalindrome(char arr[])
 {
     for(int i = 0; i < size(arr); i++)
     {
-        if(arr[i] != size(arr) - 1 - i)
+        if(arr[i] != arr[size(arr)-i-1])
         {
             return false;
         }
@@ -30,6 +30,6 @@ bool isPalindrome(char arr[])
 
 int main()
 {
-    cout << isPalindrome("ioi");
+    cout << boolalpha << isPalindrome("ioi");
     return 0;
 }
