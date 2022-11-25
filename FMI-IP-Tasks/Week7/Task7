@@ -1,1 +1,46 @@
+#include <iostream>
 
+using namespace std;
+
+int SIZE = 100;
+
+void reverseNumbersOfArray(int arr[100], int number)
+{
+    int temp;
+    int arrReverse[SIZE];
+    
+    for(int i = 0; i < number; i++)
+    {
+       cout << arr[number - i] << " ";
+    }
+}
+
+
+
+int main()
+{
+    cout << "Enter how many elements do you want in the array" << endl;
+    int number;
+    cin >> number;
+    
+    int arr[100];
+    
+    cout << "Now enter the elements" << endl;
+    for(int i = 1; i <= number; i++)
+    {
+        cin >> arr[i];
+    }
+    
+    cout << "These are the elements" << endl;
+    for(int i = 1; i <= number; i++)
+    {
+        cout << arr[i] << " ";
+    }
+    
+    cout << endl;
+    
+    cout << "The number in reverse are" << endl;
+    reverseNumbersOfArray(arr, 3);
+    
+    return 0;
+}
