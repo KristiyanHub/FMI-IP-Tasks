@@ -4,7 +4,7 @@ using namespace std;
 
 int SIZE = 100;
 
-void reverseNumbersOfArray(int number)
+void reverseNumbersOfArray(int arr[100], int number)
 {
     
     for(int i = 0; i < number; i++)
