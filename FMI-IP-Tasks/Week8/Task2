@@ -1,0 +1,50 @@
+#include <iostream>
+
+using namespace std;
+const int ROWS = 50;
+const int COLUMS = 50;
+
+
+void multyplicationOfTwoMatricies(int mat1[ROWS][COLUMS], int mat2[ROWS][COLUMS], int ourRows, int ourColums)
+{
+    for(int i = 1; i <= ourRows; i++)
+    {
+        for(int j = 1; j <= ourColums; j++)
+        {
+            cout << mat1[i][j] * mat2[i][j] << " ";
+        }
+    }
+}
+
+int main()
+{
+    cout << "Enter how many rows and colums you want the two matricies to have" << endl;
+    int rows, colums;
+    cin >> rows;
+    cin >> colums;
+    
+    int matrix1[ROWS][COLUMS];
+    int matrix2[ROWS][COLUMS];
+    
+    cout << "Enter the elements of the first matrix" << endl;
+    for(int i = 1; i <= rows; i++)
+    {
+        for(int j = 1; j <= colums; j++)
+        {
+            cin >> matrix1[i][j];
+        }
+    }
+    
+    cout << "Enter the elements of the second matrix" << endl;
+    for(int i = 1; i <= rows; i++)
+    {
+        for(int j = 1; j <= colums; j++)
+        {
+            cin >> matrix2[i][j];
+        }
+    }
+    
+    multyplicationOfTwoMatricies(matrix1, matrix2, rows, colums);
+    
+    return 0;
+}
