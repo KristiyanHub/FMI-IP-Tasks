@@ -1,3 +1,10 @@
+#include <iostream>
+
+using namespace std;
+const int ROWS = 50;
+const int COLUMS = 50;
+
+
 void multyplicationOfTwoMatricies(int mat1[ROWS][COLUMS], int mat2[ROWS][COLUMS], int ourRows, int ourColums)
 {
     int multy[ROWS][COLUMS];
