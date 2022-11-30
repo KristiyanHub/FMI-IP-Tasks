@@ -1,19 +1,26 @@
-#include <iostream>
-
-using namespace std;
-const int ROWS = 50;
-const int COLUMS = 50;
-
-
 void multyplicationOfTwoMatricies(int mat1[ROWS][COLUMS], int mat2[ROWS][COLUMS], int ourRows, int ourColums)
 {
+    int multy[ROWS][COLUMS];
+    
     for(int i = 1; i <= ourRows; i++)
     {
         for(int j = 1; j <= ourColums; j++)
         {
-            cout << mat1[i][j] * mat2[i][j] << " ";
+            for(int k = 1; k <= ourColums; k++)
+            {
+                multy[i][j] += mat1[i][k] * mat2[k][j];
+            }
         }
     }
+    
+    for(int i = 1; i <= ourRows; i++)
+    {
+        for(int j = 1; j <= ourColums; j++)
+        {
+            cout << multy[i][j] << " ";
+        }
+    }
+    
 }
 
 int main()
