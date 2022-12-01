@@ -1,0 +1,72 @@
+#include <iostream>
+
+using namespace std;
+
+const int ROWS = 50;
+const int COLS = 50;
+
+void sumOfDiagonals(int matrix[ROWS][COLS], int ourRows, int ourColums)
+{
+    int sumFirstDiagonal = 0;
+    int sumSecondDiagonal = 0;
+    
+    for(int i = 0; i < ourRows; i++)
+    {
+        for(int j = 0; j < ourColums; j++)
+        {
+            if(i == j)
+            {
+            sumFirstDiagonal += matrix[i][j];
+            }
+            
+            if((i + j) == ourColums - 1)
+            {
+                sumSecondDiagonal +=  matrix[i][j];
+            }
+            
+            if((i == j) && ((i + j) == ourColums - 1))
+            {
+                sumSecondDiagonal -=  matrix[i][j];
+            }
+        }
+    }
+    
+    cout << "Sum of first diagonal: " << sumFirstDiagonal<< endl;
+    cout << "Sum of second diagonal: " <<sumSecondDiagonal << endl;
+    
+    cout << "The sum of our diagonals is:" << endl;
+    cout << sumFirstDiagonal + sumSecondDiagonal;
+}
+
+int main()
+{
+    cout << "Enter the dimensions of our matrix" << endl;
+    int row, colum;
+    cin >> row;
+    cin >> colum;
+    
+    int matrix[ROWS][COLS];
+    
+    cout << "Now enter the elements" << endl;
+    for(int i = 0; i < row; i++)
+    {
+        for(int j = 0; j < colum; j++)
+        {
+            cin >> matrix[i][j];
+        }
+    }
+    
+    cout << "Our matrix is:" << endl;
+    for(int i = 0; i < row; i++)
+    {
+        for(int j = 0; j < colum; j++)
+        {
+            cout << matrix[i][j];
+        }
+    }
+
+    cout << endl;
+    sumOfDiagonals(matrix, row, colum);
+    
+    return 0;
+}
