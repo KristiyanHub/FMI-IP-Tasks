@@ -1,0 +1,102 @@
+#include <iostream>
+
+using namespace std;
+
+const int ROWS = 10;
+const int COLUMS = 10;
+
+int breakingBadTheArray(int arr1[ROWS], int numberOfElements)
+{
+    int temp;
+    for (int i = 0; i < numberOfElements; i++)
+    {
+        temp = arr1[i];
+        return temp;
+    }
+}
+
+void indexOfColum(int matrix[ROWS][COLUMS], int arr[ROWS], int ourCols)
+{
+    int counterForMaches = 0;
+    int indexWeNeed = 0;
+    int currentIndex = 0;
+
+    int mostMaching = 0;
+
+    for (int i = 0; i < 5; i++)
+    {
+        currentIndex += 1;
+        for (int j = 0; j < ourCols; j++)
+        {
+            if (matrix[i][j] == breakingBadTheArray(arr, ourCols))
+            {
+                counterForMaches += 1;
+            }
+
+            if (counterForMaches > mostMaching)
+            {
+                mostMaching = counterForMaches;
+                indexWeNeed = currentIndex;
+            }
+        }
+    }
+
+    cout << endl;
+    cout << "The most maches we have are: " << mostMaching << endl;
+    cout << "The index of the row that is most like our array is: " << indexWeNeed << endl;
+}
+
+
+int main()
+{
+        cout << "Enter the number of elements for a matrix and an array, it's colums are 5 in number" << endl;
+        int m;
+        cin >> m;
+
+        int matrix[ROWS][COLUMS];
+        int arr[ROWS];
+
+        cout << "Now eneter the elements of our matrix" << endl;
+        for (int i = 0; i < 5; i++)
+        {
+            for (int j = 0; j < m; j++)
+            {
+                cin >> matrix[i][j];
+            }
+        }
+
+        cout << "Now enter the elements of our array" << endl;
+        for (int i = 0; i < m; i++)
+        {
+            cin >> arr[i];
+        }
+
+        int counter = 0;
+
+        cout << "Our matrix is" << endl;
+        for (int i = 0; i < 5; i++)
+        { 
+            for (int j = 0; j < m; j++)
+            {
+                counter += 1;
+                if (counter > 5)
+                {
+                    cout << endl;
+                    counter = 1;
+                }
+                cout << matrix[i][j];
+            }
+        }
+
+        cout << endl;
+
+        cout << "Our array is" << endl;
+        for (int i = 0; i < m; i++)
+        {
+            cout << arr[i];
+        }
+
+        indexOfColum(matrix, arr, m);
+
+        return 0;
+}
