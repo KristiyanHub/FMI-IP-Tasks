@@ -1,0 +1,24 @@
+#include <iostream>
+
+using namespace std;
+
+void newNumbers(int *first, int *second)
+{
+    int temp = *first;
+    *first = *second;
+    *second = temp;
+    
+    cout << *first << " " << *second;
+}
+
+int main()
+{
+    cout << "Enter two numbers to be swapped" << endl;
+    int firstNum, secondNum;
+    cin >> firstNum;
+    cin >> secondNum;
+    
+    newNumbers(&firstNum, &secondNum);
+
+    return 0;
+}
