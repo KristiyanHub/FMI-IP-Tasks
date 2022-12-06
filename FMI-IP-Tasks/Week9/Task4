@@ -1,0 +1,48 @@
+#include <iostream>
+
+using namespace std;
+
+const int SIZE = 50;
+
+void coordinatesOfElement(int *elementWeNeed, int numberOfElements, int *arr )
+{
+    
+    int numberOfOccurences = 0;
+    
+    for(int i = 0; i < numberOfElements; i++)
+    {
+        if(numberOfOccurences == 1)
+        {
+            cout << "" ;
+        }
+        else if(arr[i] == *elementWeNeed)
+        {
+            cout << &arr[i];
+            numberOfOccurences += 1;
+        }
+        
+    }
+}
+
+int main()
+{
+    cout << "Enter how many elements do you want" << endl;
+    int numberOfElments;
+    cin >> numberOfElments;
+    
+    int *arr = new int(numberOfElments);
+    
+    cout << "Now enter the elements of our array" << endl;
+    for(int i = 0; i < numberOfElments; i++)
+    {
+        cin >> arr[i];
+    }
+    
+    cout << "Now enter the element that we will seek in our array" << endl;
+    int element;
+    cin >> element;
+    
+    coordinatesOfElement(&element, numberOfElments, arr);
+    
+    return 0;
+}
