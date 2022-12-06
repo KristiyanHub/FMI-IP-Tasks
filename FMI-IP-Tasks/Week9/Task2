@@ -1,0 +1,23 @@
+#include <iostream>
+
+using namespace std;
+
+void givesTheTwoVersionsOfFirst(int first, int *second)
+{
+    first = *second;
+    
+    cout << "The new first is: " << first << endl;
+}
+
+int main()
+{
+    cout << "Enter two numbers to be swapped" << endl;
+    int firstNumb, secondNum;
+    cin >> firstNumb;
+    cin >> secondNum;
+    
+    givesTheTwoVersionsOfFirst(firstNumb, &secondNum);
+    cout << "The original is: " << firstNumb << endl;
+
+    return 0;
+}
