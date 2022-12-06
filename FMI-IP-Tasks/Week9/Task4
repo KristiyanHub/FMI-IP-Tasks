@@ -47,5 +47,6 @@ int main()
     
     coordinatesOfElement(&element, numberOfElments, arr);
     
+    delete[] arr;
     return 0;
 }
