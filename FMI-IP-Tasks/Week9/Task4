@@ -20,7 +20,10 @@ void coordinatesOfElement(int *elementWeNeed, int numberOfElements, int *arr )
             cout << &arr[i];
             numberOfOccurences += 1;
         }
-        
+        else
+        {
+            cout << "Null pointer ";
+        }
     }
 }
 
