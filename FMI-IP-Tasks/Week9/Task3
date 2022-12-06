@@ -1,0 +1,36 @@
+#include <iostream>
+
+using namespace std;
+
+const int SIZE = 50;
+
+void result(int arr[SIZE], int *multiply, int *limit)
+{
+    for(int i = 0; i < *limit; i++)
+    {
+        cout << arr[i] * *multiply << " ";
+    }
+}
+
+int main()
+{
+    cout << "Enter how many elements do you want" << endl;
+    int elements;
+    cin >> elements;
+    
+    int arr[SIZE];
+    
+    cout << "Now enter the elements of our array" << endl;
+    for(int i = 0; i < elements; i++)
+    {
+        cin >> arr[i];
+    }
+    
+    cout << "Now enter by what element you want to multiply the elements of our array" << endl;
+    int multiplicator;
+    cin >> multiplicator;
+    
+    result(arr, &multiplicator, &elements);
+    
+    return 0;
+}
