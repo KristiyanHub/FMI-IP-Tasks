@@ -1,0 +1,27 @@
+#include <iostream>
+
+using namespace std;
+const int SIZE = 50;
+
+void lenght(char message[SIZE])
+{
+    int counter = 0;
+    
+    while(message[counter] != '\0')
+    {
+        counter += 1;
+    }
+    
+    cout << "The lenght is: " << counter;
+}
+
+int main()
+{
+    cout << "Enter first message" << endl;
+    char firstMessage[SIZE];
+    cin >> firstMessage;
+    
+    lenght(firstMessage);
+
+    return 0;
+}
