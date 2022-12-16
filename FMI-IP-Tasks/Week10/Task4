@@ -1,0 +1,97 @@
+#include <iostream>
+
+using namespace std;
+const int SIZE = 50;
+
+int lenght(char message[SIZE])
+{
+    int counter = 0;
+    
+    while(message[counter] != '\0')
+    {
+        counter += 1;
+    }
+    
+    return counter;
+}
+
+void compairSizes(char firstMessage[SIZE], char secondMessage[SIZE])
+{
+    int lenghtFirst = lenght(firstMessage);
+    int lenghtSecond = lenght(secondMessage);
+    
+    int randomThing;
+    
+    if(lenghtFirst == lenghtSecond)
+    {
+        for(int i = 0; i < lenghtFirst; i++)
+        {
+            if(firstMessage[i] == secondMessage[i])
+            {
+                randomThing = 0;
+            }
+            else if(firstMessage[i] > secondMessage[i])
+            {
+                randomThing = 1;
+            }
+            else
+            {
+                randomThing = -1;
+            }
+        }
+    }
+    else if(lenghtFirst > lenghtSecond)
+    {
+        for(int i = 0; i < lenghtFirst; i++)
+        {
+            if(firstMessage[i] == secondMessage[i])
+            {
+                randomThing = 0;
+            }
+            else if(firstMessage[i] > secondMessage[i])
+            {
+                randomThing = 1;
+            }
+            else
+            {
+                randomThing = -1;
+            }
+        }
+    }
+    else
+    {
+        for(int i = 0; i < lenghtSecond; i++)
+        {
+            if(firstMessage[i] == secondMessage[i])
+            {
+                randomThing = 0;
+            }
+            else if(firstMessage[i] > secondMessage[i])
+            {
+                randomThing = 1;
+            }
+            else
+            {
+                randomThing = -1;
+            }
+        }
+    }
+    
+    
+    cout << randomThing;
+}
+
+int main()
+{
+    cout << "Enter first message" << endl;
+    char firstMessage[SIZE];
+    cin >> firstMessage;
+    
+    cout << "Enter second message" << endl;
+    char secondMessage[SIZE];
+    cin >> secondMessage;
+
+    compairSizes(firstMessage, secondMessage);
+
+    return 0;
+}
