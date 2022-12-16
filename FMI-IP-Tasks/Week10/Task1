@@ -1,0 +1,56 @@
+#include <iostream>
+
+using namespace std;
+const int SIZE = 50;
+
+int length(char message[SIZE])
+{
+    int counter = 0;
+    
+    while(message[counter] != '\0')
+    {
+        counter += 1;
+    }
+    
+    return counter;
+}
+
+char createCopy(char message[SIZE], char newMessage[SIZE])
+{
+    int numberOfElements = length(message);
+    
+    for(int i = 0; i < numberOfElements; i++)
+    {
+        newMessage[i] = message[i];
+    }
+    
+    return newMessage[numberOfElements];
+    
+}
+
+void printCopy(char message[SIZE], char newMessage[SIZE])
+{
+    int numberOfElements = length(message);
+    newMessage[SIZE] = createCopy(message, newMessage);
+    
+    cout << "The copy is:" << endl;
+    for(int i = 0; i < numberOfElements; i++)
+    {
+        cout << newMessage[i];
+    }
+}
+
+int main()
+{
+    cout << "Enter text" << endl;
+    char message[SIZE];
+    cin >> message;
+    
+    cout << "Our message is: " << message << endl;
+    
+    char newMessage[SIZE];
+    
+    printCopy(message, newMessage);
+
+    return 0;
+}
