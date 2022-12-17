@@ -12,19 +12,24 @@ int lenght(char message[SIZE])
         counter += 1;
     }
     
-    return counter;
+   return counter;
 }
 
 void printRevers(char firstMessage[SIZE])
 {
     int lenghty = lenght(firstMessage);
+    char reverseArray[SIZE];
     
     cout << "The message in reverse is" << endl;
     
-    for(int i = 0; i < lenghty; lenghty--)
+    for(int i = 0; i < lenghty; i++)
     {
-        firstMessage[i] =  firstMessage[lenghty];
-        cout << firstMessage[i];
+        reverseArray[i] =  firstMessage[lenghty - i - 1];
+    }
+    
+    for(int i = 0; i < lenghty; i++)
+    {
+        cout << reverseArray[i];
     }
 }
 
