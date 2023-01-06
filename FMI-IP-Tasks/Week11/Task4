@@ -1,0 +1,21 @@
+#include <iostream>
+
+using namespace std;
+
+int sumOfArr(int arr[], int lenght)
+{
+    if(lenght <= 0)
+    {
+        return 0;
+    }
+    return arr[lenght - 1] + sumOfArr(arr, lenght - 1);
+    
+}
+
+int main()
+{
+    int arr[] = {1, 4, 3};
+    cout << sumOfArr(arr, 2);
+    
+    return 0;
+}
