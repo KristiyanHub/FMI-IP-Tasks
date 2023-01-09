@@ -1,0 +1,33 @@
+#include <iostream>
+
+using namespace std;
+
+int smallest = 100;
+
+int smallestElmentInArray(int arr[], int lenght)
+{
+    
+    if(lenght < 0)
+    {
+        return smallest;
+    }
+    
+    if(smallest > arr[lenght])
+    {
+        smallest = arr[lenght];
+        smallestElmentInArray(arr, lenght - 1);
+    }
+    else
+    {
+        smallestElmentInArray(arr, lenght - 1);
+    }
+    
+}
+
+int main()
+{
+    int arr[] = {2, 7, 1};
+    cout << smallestElmentInArray(arr, 2);
+    
+    return 0;
+}
