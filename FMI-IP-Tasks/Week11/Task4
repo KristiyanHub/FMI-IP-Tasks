@@ -14,8 +14,8 @@ int sumOfArr(int arr[], int lenght)
 
 int main()
 {
-    int arr[] = {1, 4, 3};
-    cout << sumOfArr(arr, 2);
+    int arr[] = {2, 4, 5};
+    cout << sumOfArr(arr, 3);
     
     return 0;
 }
