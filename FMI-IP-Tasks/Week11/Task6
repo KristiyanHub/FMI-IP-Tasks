@@ -1,0 +1,39 @@
+#include <iostream>
+
+using namespace std;
+
+bool numberIsPowerOfTwo(int number)
+{
+    if(number == 1)
+    {
+        return true;
+    }
+    
+    if(number == 0)
+    {
+        return false;
+    }
+    
+    if(number % 2 != 0)
+    {
+        return false;
+    }
+    
+    numberIsPowerOfTwo(number/2);
+    
+}
+
+int main()
+{
+    cout << "Enter a number bigger than one" << endl;
+    int number;
+    do
+    {
+        cin >> number;
+    }
+    while(number == 1);
+    
+    cout << boolalpha << numberIsPowerOfTwo(number);
+    
+    return 0;
+}
