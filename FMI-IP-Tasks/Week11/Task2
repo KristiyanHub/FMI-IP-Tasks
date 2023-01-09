@@ -1,0 +1,30 @@
+#include <iostream>
+
+using namespace std;
+
+int fibNumber(int n)
+{
+    if(n <= 1)
+    {
+        return n;
+    }
+    
+    return fibNumber(n - 1) +  fibNumber(n - 2);
+    
+}
+
+int main()
+{
+    cout << "Enter to which elment you want to print the Fibonacci sequence" << endl;
+    int n;
+    
+    do
+    {
+        cin >> n;
+    }
+    while(n < 0);
+    
+    cout << fibNumber(n);
+    
+    return 0;
+}
