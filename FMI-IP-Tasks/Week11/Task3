@@ -2,27 +2,28 @@
 
 using namespace std;
 
-bool isPalindrome(char arr[], int lenght = 3, int index = 0)
+bool isPalindrome(char arr[], int lenght = 2, int index = 0)
 {
-    lenght -= 1;
     
     if(index >= lenght)
     {
         return true;
     }
     
-    if(arr[index] == arr[lenght])
+    if(arr[index] == arr[lenght - index])
     {
         isPalindrome(arr, lenght, index + 1);
     }
-    
-    return false;
+    else
+    {
+        return false;
+    }
     
 }
 
 int main()
 {
-    char arr[] = "sus";
+    char arr[] = "amogus";
     
     cout << boolalpha << isPalindrome(arr);
     
