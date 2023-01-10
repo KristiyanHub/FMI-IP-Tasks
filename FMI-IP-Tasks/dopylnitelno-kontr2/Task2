@@ -1,0 +1,36 @@
+#include <iostream>
+
+using namespace std;
+
+const int LENGHT = 10;
+
+void newMessage(char arr[LENGHT])
+{
+    int index = 0;
+    
+    while(arr[index] != '\0')
+    {
+        if(arr[index] >= 'a' && arr[index] <= 'z')
+        {
+            arr[index] = arr[index] - 32;
+        }
+        else if(arr[index] >= 'A' && arr[index] <= 'Z')
+        {
+            arr[index] = arr[index] + 32;
+        }
+        index += 1;
+    }
+    
+    cout << arr;
+}
+
+int main()
+{
+    cout << "Enter a word" << endl;
+    char arr[LENGHT];
+    cin.getline(arr, LENGHT);
+    
+    newMessage(arr);
+    
+    return 0;
+}
