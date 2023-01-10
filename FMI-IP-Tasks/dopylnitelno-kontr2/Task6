@@ -1,0 +1,29 @@
+#include <iostream>
+
+using namespace std;
+
+char printTriangle(int n, int currentN = 0)
+{
+    if(currentN < 0)
+    {
+        return 0;
+    }
+    
+    
+}
+
+int main()
+{
+    cout << "Enter n" << endl;
+    int n;
+    
+    do
+    {
+        cin >> n;
+    }
+    while(n <= 0);
+    
+    cout << printTriangle(n);
+    
+    return 0;
+}
