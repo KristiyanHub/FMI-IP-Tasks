@@ -1,0 +1,35 @@
+#include <iostream>
+
+using namespace std;
+
+char printAlphabet(int index = 65)
+{
+    if(index > 90)
+    {
+        return char(index);
+    }
+    
+    cout << char(index) << " ";
+    printAlphabet(index + 1);
+}
+
+char printAlphabetInReverse(int index = 90)
+{
+    if(index < 65)
+    {
+        return char(index);
+    }
+    
+    cout << char(index) << " ";
+    printAlphabetInReverse(index - 1);
+}
+
+int main()
+{
+    
+    printAlphabet();
+    cout << endl;
+    printAlphabetInReverse();
+    
+    return 0;
+}
