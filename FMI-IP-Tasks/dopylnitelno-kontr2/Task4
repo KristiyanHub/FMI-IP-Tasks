@@ -1,0 +1,41 @@
+#include <iostream>
+
+using namespace std;
+
+bool areThereRemovedElements(int size, int arr[3], int element)
+{
+    bool flag = false;
+    
+    for(int i = 0; i < size; i++)
+    {
+        if(arr[i] == element)
+        {
+            arr[i] = arr[i+1];
+            flag = true;
+        }
+    }
+    
+    return flag;
+}
+
+int main()
+{
+    cout << "Enter the size of an array" << endl;
+    int size;
+    cin >> size;
+    
+    cout << "Enter the array" << endl;
+    int arr[size];
+    for(int i = 0; i < size; i++)
+    {
+        cin >> arr[i];
+    }
+    
+    cout << "Enter which element you want to remove" << endl;
+    int element;
+    cin >> element;
+    
+    cout << boolalpha << areThereRemovedElements(size, arr, element);
+    
+    return 0;
+}
