@@ -2,14 +2,34 @@
 
 using namespace std;
 
-char printTriangle(int n, int currentN = 0)
+void printStars(n)
 {
-    if(currentN < 0)
+    while(n )
+    {
+        
+    }
+}
+
+char printTriangleEnding(int n)
+{
+    if(n == 0)
     {
         return 0;
     }
     
     
+    printTriangleStarting(n - 1)
+}
+
+char printTriangleStarting(int n, int currentN = 0)
+{
+    if(currentN == n)
+    {
+        printTriangleEnding(n);
+    }
+    
+    
+    printTriangleStarting(n, currentN + 1)
 }
 
 int main()
