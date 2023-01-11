@@ -2,48 +2,52 @@
 
 using namespace std;
 
-void printStars(n)
-{
-    while(n )
-    {
-        
-    }
-}
-
 char printTriangleEnding(int n)
 {
-    if(n == 0)
+    if (n < 0)
     {
         return 0;
     }
-    
-    
-    printTriangleStarting(n - 1)
+
+    for (int i = 1; i < n; i++)
+    {
+        cout << "* ";
+    }
+
+    cout << endl;
+
+    printTriangleEnding(n - 1);
 }
 
-char printTriangleStarting(int n, int currentN = 0)
+char printTriangleStarting(int n, int i, int keeper)
 {
-    if(currentN == n)
+
+    if (n == 0)
     {
-        printTriangleEnding(n);
+        return printTriangleEnding(keeper);
     }
-    
-    
-    printTriangleStarting(n, currentN + 1)
+
+    for (int j = i - i; j < i; j++)
+    {
+        cout << "* ";
+    }
+
+    cout << endl;
+
+    printTriangleStarting(n - 1, i + 1, keeper);
 }
 
 int main()
 {
     cout << "Enter n" << endl;
     int n;
-    
+
     do
     {
         cin >> n;
-    }
-    while(n <= 0);
-    
-    cout << printTriangle(n);
-    
+    } while (n <= 0);
+
+    printTriangleStarting(n, 1, n);
+
     return 0;
 }
