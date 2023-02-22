@@ -1,0 +1,55 @@
+#include <iostream>
+using namespace std;
+
+int* giveSmaller(int* a, int* b)
+{
+    if (a > b)
+    {
+        return b;
+    }
+    else
+    {
+        return a;
+    }
+}
+
+int giveSmaller2(int& a, int& b)
+{
+    if (a > b)
+    {
+        return b;
+    }
+    else
+    {
+        return a;
+    }
+}
+
+int giveSmaller3(int a, int b)
+{
+    if (a > b)
+    {
+        return b;
+    }
+    else
+    {
+        return a;
+    }
+}
+
+int main()
+{
+    cout << "Enter two numbers" << endl;
+    int* a = new int;
+    int* b = new int;
+
+    cin >> *a;
+    cin >> *b;
+
+    cout << "Pointers " << *(giveSmaller(a, b)) << endl;
+    cout << "References " << giveSmaller2(*a, *b) << endl;
+    cout << "Ints " << giveSmaller3(*a, *b) << endl;
+
+    delete a;
+    delete b;
+}
