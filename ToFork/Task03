@@ -1,13 +1,14 @@
 #include <iostream>
+
 using namespace std;
 
 void transponseMatrix(int col, int row, int* matrix[10])
 {
     int** transponsedMatrix = new int* [50];
 
-    for (int i = 0; i < row; i++)
+    for (int i = 0; i < col; i++)
     {
-        transponsedMatrix[i] = new int[col];
+        transponsedMatrix[i] = new int[row];
     }
 
     for (int i = 0; i < row; i++)
