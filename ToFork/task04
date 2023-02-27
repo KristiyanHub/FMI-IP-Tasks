@@ -1,0 +1,38 @@
+#include <iostream>
+using namespace std;
+
+struct Student
+{
+    char name[31];
+    unsigned int fnNumber;
+};
+
+void initStudent(Student& student)
+{
+    cout << "Enter name of student: ";
+    cin.getline(student.name, 31);
+
+    cout << "Enter fn: ";
+    cin >> student.fnNumber;
+}
+
+void printStudent(Student& student)
+{
+    cout << "Student's name: ";
+    cout << student.name;
+
+    cout << endl;
+
+    cout << "Student's fn: ";
+    cout << student.fnNumber;
+}
+
+int main()
+{
+    Student st = {};
+
+    initStudent(st);
+    printStudent(st);
+
+    return 0;
+}
