@@ -1,0 +1,37 @@
+#include <iostream>
+using namespace std;
+
+struct complexNumber
+{
+    int realPart;
+    int imaginaryPart;
+};
+
+int sumComplexNumbersReal(complexNumber &cn1, complexNumber &cn2)
+{
+    int sumReal = (cn1.realPart + cn2.realPart);
+    
+
+    return sumReal;
+}
+
+int sumComplexNumbersIm(complexNumber& cn1, complexNumber& cn2)
+{
+    int sumIm = (cn1.imaginaryPart + cn2.imaginaryPart);
+
+    return sumIm;
+}
+
+void printSum(complexNumber& cn1, complexNumber& cn2)
+{
+    cout << "The sum is: ";
+    cout << sumComplexNumbersReal(cn1, cn2) << " " << sumComplexNumbersIm(cn1, cn2) << endl;
+}
+
+int main()
+{
+    complexNumber cn1 = {1, 2};
+    complexNumber cn2 = {2, 3};
+
+    printSum(cn1, cn2);
+}
