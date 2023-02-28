@@ -1,0 +1,54 @@
+#include <iostream>
+
+using namespace std;
+
+const int MAX = 100;
+
+struct Movie
+{
+    char name[MAX];
+    int lenght;
+    char genere[MAX];
+    int rating;
+};
+
+void printMovies(Movie mv[3])
+{
+    for(int i = 0; i < 3; i++)
+    {
+        cout << "Movie info: " << endl;
+        cout << mv[3].name;
+        cout << mv[3].lenght;
+        cout << mv[3].genere;
+        cout << mv[3].rating;
+        cout << endl;
+    }
+}
+
+int main()
+{
+    Movie mv[3];
+    
+    for(int i = 0; i < 3; i++)
+    {
+        cout << "Enter movie info: " << endl;
+        
+        cin.ignore();
+        cout << "Enter name: ";
+        cin.getline(mv[3].name, MAX);
+        
+        cout << "Enter lenght: "; 
+        cin >> mv[3].lenght;
+        
+        cin.ignore();
+        cout << "Enter genere: ";
+        cin.getline(mv[3].genere, MAX);
+        
+        cout << "Enter rating: ";
+        cin >> mv[3].rating;
+    }
+    
+    printMovies(mv);
+
+    return 0;
+}
