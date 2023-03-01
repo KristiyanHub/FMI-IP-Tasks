@@ -1,0 +1,38 @@
+#include <iostream>
+#include <fstream>
+
+using std::cin; 
+using std::cout;
+using std::fstream;
+using std::ofstream;
+using std::endl;
+
+void lengthOfFile(fstream& file)
+{
+    int numberOfElments;
+
+    while ()
+    {
+        numberOfElments += 1;
+    }
+    
+
+    cout << numberOfElments;
+}
+
+int main()
+{
+    fstream file("newFile.txt");
+
+    if (!file.is_open()) 
+    {
+        std::cout << "File doesn't exist!" << std::endl;
+        return -1;
+    }
+
+    file << "This is the text from our file";
+
+    lengthOfFile(file);
+
+    file.close();
+}
