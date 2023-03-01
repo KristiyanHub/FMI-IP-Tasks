@@ -1,0 +1,63 @@
+#include <iostream>
+
+const int MAX = 100;
+
+struct Students
+{
+    char name[MAX];
+    double grades;
+};
+
+void createGroupAndAverage(Students group[MAX], int numberOfStudents)
+{
+    for(int i = 0; i < numberOfStudents; i++)
+    {
+        std::cout << "Enter student: ";
+        std::cin.ignore();
+        std::cin.getline(group[i].name, MAX);
+        std::cin >> group[i].grades;
+    }
+    
+    double sumOfGrades;
+    sumOfGrades = 0;
+    
+    for(int i = 0; i < numberOfStudents; i++)
+    {
+        sumOfGrades += group[i].grades;
+    }
+    
+    sumOfGrades /= numberOfStudents;
+    
+   std::cout << "The average is: " << sumOfGrades;
+}
+
+void numberOfScolarships(Students group[MAX], int numberOfStudents)
+{
+    int numberOfScolarships = 0;
+    
+    for(int i = 0; i < numberOfStudents; i++)
+    {
+        if(group[i].grades >= 4.50)
+        {
+            numberOfScolarships += 1;
+        }
+    }
+    
+    std::cout << std::endl;
+    std::cout << "This is how many students will get scolarships: " << numberOfScolarships;
+}
+
+int main()
+{
+    std::cout << "Enter the number of students: ";
+    int numberOfStudents;
+    std::cin >> numberOfStudents;
+    
+    Students group[MAX];
+    
+   createGroupAndAverage(group, numberOfStudents);
+   numberOfScolarships(group, numberOfStudents);
+   sortScolarships(group, numberOfStudents);
+
+    return 0;
+}
