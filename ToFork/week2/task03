@@ -1,0 +1,51 @@
+#include <iostream>
+#include <fstream>
+#include <string>
+
+using std::cin;
+using std::cout;
+using std::fstream;
+using std::ifstream;
+using std::ofstream;
+using std::endl;
+
+int main()
+{
+    ofstream copy("copy.txt");
+    ifstream file("template.txt");
+
+    std::string line;
+
+    if (!file.is_open())
+    {
+        cout << "Error";
+        return -1;
+    }
+
+    if (file && copy) {
+
+        while (getline(file, line)) 
+        {
+            if (line == "{title}")
+            {
+                line = " Imposter";
+            }
+            else if (line == "{recipient_name}")
+            {
+                line = " Red";
+            }
+            else if (line == "{message}")
+            {
+                line = " You are sus ";
+            }
+            else if (line == "{sender_name}")
+            {
+                line = " Green";
+            }
+            copy << line;
+        }
+    }
+
+    file.close();
+    copy.close();
+}
