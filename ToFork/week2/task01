@@ -1,37 +1,45 @@
 #include <iostream>
 #include <fstream>
 
-using std::cin; 
+using std::cin;
 using std::cout;
 using std::fstream;
+using std::ifstream;
 using std::ofstream;
 using std::endl;
 
-void outputNumbers(fstream& file, int sum, int stared)
+void outputResult(fstream& file)
 {
+	int sum = 0;
+	int product = 0;
 
-	file >> sum;
-	cout << "The sum is: " << sum;
-	cout << endl;
-	file >> stared;
-	cout << "The product is: " << stared;
+	file.open("result.txt");
+
+	sum = file.get();
+	product = file.get();
+	cout << sum << endl;
+	cout << product << endl;
+
+	cout << "The sum minus the product: " << sum - product;
+	
 }
 
-void inputNumbersInFile(fstream& file)
+void inputSumAndProductInFile(fstream& file)
 {
 	int a, b, c;
+	cout << "Enter three numbers: ";
 	cin >> a >> b >> c;
 
-	int sum, star;
-	
-	
-	sum = a + b + c;
-	file << sum;
-	
-	star =  a * b * c;
-	file << star;
+	int sum, product;
 
-	outputNumbers(file, sum, star);
+
+	sum = a + b + c;
+	file >> sum;
+
+	product = a * b * c;
+	file >> product;
+
+	outputResult(file);
 }
 
 int main()
@@ -43,5 +51,7 @@ int main()
 		cout << "File is not open";
 	}
 
-	inputNumbersInFile(file);
+	inputSumAndProductInFile(file);
+
+	file.close();
 }
