@@ -1,0 +1,34 @@
+#include <iostream>
+#include <fstream>
+
+using std::cin;
+using std::cout;
+using std::fstream;
+using std::ifstream;
+using std::ofstream;
+using std::endl;
+
+const int BUFFER_SIZE = 20;
+
+int main()
+{
+    ifstream fst("myFile2.txt");
+
+    fst.open("myFile2.txt");
+
+    if (!fst.is_open())
+    {
+        cout << "Error";
+        return -1;
+    }
+
+    char buffer[BUFFER_SIZE];
+
+    do 
+    {
+        fst.getline(buffer, BUFFER_SIZE);
+        cout << buffer << endl;
+    } while (!fst.eof());
+
+    fst.close();
+}
