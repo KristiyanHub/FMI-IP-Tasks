@@ -9,30 +9,61 @@ using std::ifstream;
 using std::ofstream;
 using std::endl;
 
-void lengthOfFile(fstream& file)
+#include <iostream>
+#include <fstream>
+#include <string>
+
+using std::cin;
+using std::cout;
+using std::fstream;
+using std::ifstream;
+using std::ofstream;
+using std::endl;
+
+void outputResult(fstream& file)
 {
-    std::string line;
-    int numberOfSymbols = 0;
+	std::string sum;
+	std::string product;
 
-    while (getline(file, line))
-    {
-        numberOfSymbols += line.length();;
-    }
+	file.open("result.txt");
 
-    cout << numberOfSymbols;
+	getline(file, sum);
+	getline(file, product);
+	cout << sum << endl;
+	cout << product << endl;
+
+	cout << "The sum minus the product: ";
+
+}
+
+void inputSumAndProductInFile(fstream& file)
+{
+	int a, b, c;
+	cout << "Enter three numbers: ";
+	cin >> a >> b >> c;
+
+	int sum, product;
+
+
+	sum = a + b + c;
+	file >> sum;
+
+	product = a * b * c;
+	file >> product;
+
+	outputResult(file);
 }
 
 int main()
 {
-    fstream file("Myfile.txt");
+	fstream file("result.txt");
 
-    if (!file.is_open())
-    {
-        cout << "Error" << endl;
-        return -1;
-    }
+	if (!file.is_open())
+	{
+		cout << "File is not open";
+	}
 
-    lengthOfFile(file);
+	inputSumAndProductInFile(file);
 
-    file.close();
+	file.close();
 }
