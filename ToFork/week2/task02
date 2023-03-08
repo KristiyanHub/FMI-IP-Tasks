@@ -9,17 +9,6 @@ using std::ifstream;
 using std::ofstream;
 using std::endl;
 
-#include <iostream>
-#include <fstream>
-#include <string>
-
-using std::cin;
-using std::cout;
-using std::fstream;
-using std::ifstream;
-using std::ofstream;
-using std::endl;
-
 void outputResult(fstream& file)
 {
 	std::string sum;
