@@ -1,0 +1,81 @@
+#include <iostream>
+#include <fstream>
+
+struct Pair
+{
+    unsigned int firstNum;
+    unsigned int secondNum;
+};
+
+struct Relation
+{
+    Pair pairs[25];
+    int currentSize;
+};
+
+int createPair(Pair& par)
+{
+    std::cout << "Enter pair of numbers" << std::endl;
+    std::cin >> par.firstNum;
+    std::cin >> par.secondNum;
+
+    return 0;
+}
+
+void addPairToRelation()
+{
+    std::cout << "Enter number of relations you want to enter" << std::endl;
+    int numberOfPairs;
+    std::cin >> numberOfPairs;
+
+    int a;
+
+    Relation rel;
+    Pair par2;
+
+    for (int i = 0; i < numberOfPairs; i++)
+    {
+       a = createPair(par2);
+       rel.pairs[i];
+       //how to 
+    }
+
+    writeRelationToFile(rel);
+    readRelationFromFile();
+}
+
+void writeRelationToFile(Relation rel)
+{
+    std::ifstream ifs("relation.txt");
+
+    if (!ifs.is_open())
+    {
+        std::cout << "Error";
+    }
+    //how do i write on the file
+    ifs >> rel.pairs;
+
+    ifs.close();
+}
+
+void readRelationFromFile()
+{
+    std::ofstream ofs("relation.txt");
+
+    if (!ofs.is_open())
+    {
+        std::cout << "Error";
+    }
+
+    int rel;
+
+    std::cout << "These are the pairs ";
+    ofs << rel;
+
+    ofs.close();
+}
+
+int main()
+{
+    addPairToRelation();
+}
