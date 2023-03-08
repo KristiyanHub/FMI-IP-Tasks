@@ -1,0 +1,119 @@
+#include <iostream>
+#include <fstream>
+
+const int MAX = 128;
+
+struct User
+{
+    char name[MAX];
+    char email[MAX];
+    char password[MAX];
+};
+
+struct System
+{
+    User user[100];
+};
+
+void writeSystemToFile()
+{
+    std::ifstream ifs("UserSystem.txt");
+
+    ifs.open("UserSystem.txt");
+
+    if (!ifs.is_open())
+    {
+        std::cout << "Error";
+        return;
+    }
+
+
+
+    ifs.close();
+}
+
+void readSystemFromFile()
+{
+    std::fstream ofs("UserSystem.txt");
+
+    ofs.open("UserSystem.txt");
+
+    if (!ofs.is_open())
+    {
+        std::cout << "Error";
+        return;
+    }
+
+    char user[MAX];
+
+    while (!ofs.eof())
+    {
+        ofs.getline(user, MAX);
+        std::cout << user;
+    }
+
+    ofs.close();
+}
+
+void writeUserToFile()
+{
+    User use;
+
+    std::ifstream ifs("User.txt");
+
+    ifs.open("User.txt");
+
+    if (!ifs.is_open())
+    {
+        std::cout << "Error";
+        return;
+    }
+
+    std::cout << "Enter name: ";
+    std::cin.getline(use.name, MAX);
+    std::cout << "Enter email: ";
+    std::cin.getline(use.email, MAX);
+    std::cout << "Enter password: ";
+    std::cin.getline(use.password, MAX);
+
+    char* userName = use.name;
+    char* userEmail = use.email;
+    char* userPass = use.password;
+
+    ifs >> userName;
+    ifs >> userEmail;
+    ifs >> userPass;
+
+    std::cout << userName << " " << userEmail << " " << userPass;
+
+    ifs.close();
+}
+
+void readUserFromFile()
+{
+    std::fstream ofs("User.txt");
+
+    ofs.open("User.txt");
+
+    if (!ofs.is_open())
+    {
+        std::cout << "Error";
+        return;
+    }
+
+    char user[MAX];
+
+    while (!ofs.eof())
+    {
+        ofs.getline(user, MAX);
+        std::cout << user;
+    }
+
+    ofs.close();
+}
+
+int main()
+{
+    writeUserToFile();
+    readUserFromFile();
+}
