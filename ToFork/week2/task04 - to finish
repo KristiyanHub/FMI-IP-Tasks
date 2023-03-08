@@ -35,9 +35,9 @@ void addPairToRelation()
 
     for (int i = 0; i < numberOfPairs; i++)
     {
-       a = createPair(par2);
-       rel.pairs[i];
-       //how to 
+        a = createPair(par2);
+        rel.pairs[i];
+        //how to create struc array of other structs
     }
 
     writeRelationToFile(rel);
@@ -52,7 +52,7 @@ void writeRelationToFile(Relation rel)
     {
         std::cout << "Error";
     }
-    //how do i write on the file
+    //how do i write a struct on the file
     ifs >> rel.pairs;
 
     ifs.close();
