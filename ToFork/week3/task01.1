@@ -88,7 +88,7 @@ void readStudentFromFile(int numberOfStudents)
         std::cout << "Average grade: " << averageGrades << std::endl;
         ifs >> color;
         std::cout << "Hair color: " << color << std::endl;
-    } while (!ifs.eof());
+    } while (ifs.eof());
 
     ifs.close();
 }
