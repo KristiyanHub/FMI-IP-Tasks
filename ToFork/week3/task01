@@ -1,13 +1,22 @@
 #include <iostream>
 #include <fstream>
 
+enum hairColor
+{
+    Brown,
+    Black,
+    Blond,
+    Red,
+    White
+};
+
 struct Student
 {
     char firstName[17];
     char secondName[17];
     int fcNumber;
     double averageGrades;
-    char hairColor[15];
+    hairColor color;
 };
 
 void createStudent(Student student[1024], int numberOfStudents)
@@ -28,10 +37,11 @@ void createStudent(Student student[1024], int numberOfStudents)
         std::cout << "Enter average grade" << std::endl;
         std::cin >> student[i].averageGrades;
 
-        std::cin.ignore();
         std::cout << "Enter hair color" << std::endl;
-        std::cin.getline(student[i].hairColor, 15);
+        student[i].color;
     }
+
+    std::cin.ignore();
 }
 
 void printStudent(Student student[1024], int numberOfStudents)
@@ -42,11 +52,11 @@ void printStudent(Student student[1024], int numberOfStudents)
         std::cout << "Second name: " << student[i].secondName << std::endl;
         std::cout << "Faculty number: " << student[i].fcNumber << std::endl;
         std::cout << "Average grade: " << student[i].averageGrades << std::endl;
-        std::cout << "Hair color: " << student[i].hairColor << std::endl;
+        std::cout << "Hair color: " << student[i].color << std::endl;
     }
 }
 
-void writeStudentToFile(Student student[1024], int numberOfStudents)
+void readStudentFromFile(Student student[1024], int numberOfStudents)
 {
     std::ifstream ifs("Students.csv");
 
@@ -62,13 +72,12 @@ void writeStudentToFile(Student student[1024], int numberOfStudents)
         ifs >> student[i].secondName;
         ifs >> student[i].fcNumber;
         ifs >> student[i].averageGrades;
-        ifs >> student[i].hairColor;
     }
 
     ifs.close();
 }
 
-void readStudentFromFile(Student student[1024], int numberOfStudents)
+void writeStudentToFile(Student student[1024], int numberOfStudents)
 {
     std::ofstream ofs("Students.csv");
 
@@ -81,12 +90,18 @@ void readStudentFromFile(Student student[1024], int numberOfStudents)
     for (int i = 0; i < numberOfStudents; i++)
     {
         ofs << student[i].firstName;
+        ofs << ", " ;
         ofs << student[i].secondName;
+        ofs << ", ";
         ofs << student[i].fcNumber;
+        ofs << ", ";
         ofs << student[i].averageGrades;
-        ofs << student[i].hairColor;
+        ofs << ", ";
+        ofs << student[i].color;
+        ofs << std::endl;
     }
 
+    readStudentFromFile(student, numberOfStudents);
     ofs.close();
 }
 
@@ -99,8 +114,8 @@ int main()
     Student student[1024];
 
     createStudent(student, numberOfStudents);
-    printStudent(student, numberOfStudents);
+    //printStudent(student, numberOfStudents);
 
     writeStudentToFile(student, numberOfStudents);
-    readStudentFromFile(student, numberOfStudents);
+    
 }
