@@ -1,0 +1,106 @@
+#include <iostream>
+#include <fstream>
+
+struct Student
+{
+    char firstName[17];
+    char secondName[17];
+    int fcNumber;
+    double averageGrades;
+    char hairColor[15];
+};
+
+void createStudent(Student student[1024], int numberOfStudents)
+{
+    std::cin.ignore();
+
+    for (int i = 0; i < numberOfStudents; i++)
+    {
+        std::cout << "Enter first name" << std::endl;
+        std::cin.getline(student[i].firstName, 16);
+
+        std::cout << "Enter second name" << std::endl;
+        std::cin.getline(student[i].secondName, 16);
+
+        std::cout << "Enter faculty number" << std::endl;
+        std::cin >> student[i].fcNumber;
+
+        std::cout << "Enter average grade" << std::endl;
+        std::cin >> student[i].averageGrades;
+
+        std::cin.ignore();
+        std::cout << "Enter hair color" << std::endl;
+        std::cin.getline(student[i].hairColor, 15);
+    }
+}
+
+void printStudent(Student student[1024], int numberOfStudents)
+{
+    for (int i = 0; i < numberOfStudents; i++)
+    {
+        std::cout << "First name: " << student[i].firstName << std::endl;
+        std::cout << "Second name: " << student[i].secondName << std::endl;
+        std::cout << "Faculty number: " << student[i].fcNumber << std::endl;
+        std::cout << "Average grade: " << student[i].averageGrades << std::endl;
+        std::cout << "Hair color: " << student[i].hairColor << std::endl;
+    }
+}
+
+void writeStudentToFile(Student student[1024], int numberOfStudents)
+{
+    std::ifstream ifs("Students.csv");
+
+    if (!ifs.is_open())
+    {
+        std::cout << "Error";
+        return;
+    }
+
+    for (int i = 0; i < numberOfStudents; i++)
+    {
+        ifs >> student[i].firstName;
+        ifs >> student[i].secondName;
+        ifs >> student[i].fcNumber;
+        ifs >> student[i].averageGrades;
+        ifs >> student[i].hairColor;
+    }
+
+    ifs.close();
+}
+
+void readStudentFromFile(Student student[1024], int numberOfStudents)
+{
+    std::ofstream ofs("Students.csv");
+
+    if (!ofs.is_open())
+    {
+        std::cout << "Error";
+        return;
+    }
+
+    for (int i = 0; i < numberOfStudents; i++)
+    {
+        ofs << student[i].firstName;
+        ofs << student[i].secondName;
+        ofs << student[i].fcNumber;
+        ofs << student[i].averageGrades;
+        ofs << student[i].hairColor;
+    }
+
+    ofs.close();
+}
+
+int main()
+{
+    std::cout << "Enter how many students you want to enter" << std::endl;
+    int numberOfStudents;
+    std::cin >> numberOfStudents;
+
+    Student student[1024];
+
+    createStudent(student, numberOfStudents);
+    printStudent(student, numberOfStudents);
+
+    writeStudentToFile(student, numberOfStudents);
+    readStudentFromFile(student, numberOfStudents);
+}
