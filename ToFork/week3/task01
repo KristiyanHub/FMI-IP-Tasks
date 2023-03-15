@@ -39,9 +39,9 @@ void createStudent(Student student[1024], int numberOfStudents)
 
         std::cout << "Enter hair color" << std::endl;
         student[i].color;
+        std::cin.ignore();
     }
 
-    std::cin.ignore();
 }
 
 void printStudent(Student student[1024], int numberOfStudents)
@@ -56,7 +56,7 @@ void printStudent(Student student[1024], int numberOfStudents)
     }
 }
 
-void readStudentFromFile(Student student[1024], int numberOfStudents)
+void readStudentFromFile(int numberOfStudents)
 {
     std::ifstream ifs("Students.csv");
 
@@ -68,10 +68,21 @@ void readStudentFromFile(Student student[1024], int numberOfStudents)
 
     for (int i = 0; i < numberOfStudents; i++)
     {
-        ifs >> student[i].firstName;
-        ifs >> student[i].secondName;
-        ifs >> student[i].fcNumber;
-        ifs >> student[i].averageGrades;
+        char firstName[17];
+        char secondName[17];
+        int fcNumber;
+        int averageGrades;
+
+        std::cout << "Our student is: " << std::endl;
+
+        ifs >> firstName;
+        std::cout << firstName << std::endl;
+        ifs >> secondName;
+        std::cout << secondName << std::endl;
+        ifs >> fcNumber;
+        std::cout << fcNumber << std::endl;
+        ifs >> averageGrades;
+        std::cout << averageGrades << std::endl;
     }
 
     ifs.close();
@@ -101,7 +112,6 @@ void writeStudentToFile(Student student[1024], int numberOfStudents)
         ofs << std::endl;
     }
 
-    readStudentFromFile(student, numberOfStudents);
     ofs.close();
 }
 
@@ -117,5 +127,5 @@ int main()
     //printStudent(student, numberOfStudents);
 
     writeStudentToFile(student, numberOfStudents);
-    
+    readStudentFromFile(numberOfStudents);
 }
