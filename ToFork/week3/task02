@@ -1,0 +1,152 @@
+#include <iostream>
+#include <fstream>
+
+const int MAX = 100;
+const char* filePath = "Offers.txt";
+const char* name = "Da";
+
+struct jobOffer
+{
+    char companyName[26];
+    int numberOfTeamMembers;
+    int vacationDays;
+    long long salary;
+};
+
+void filterOffers(const char* filePath, long long minSalary, int numberOffers)
+{
+    std::cout << "Enter what salary are you looking for" << std::endl;
+    std::cin >> minSalary;
+
+    std::ifstream ifs(filePath, std::ios::binary);
+
+    if (!ifs.is_open())
+    {
+        std::cout << "Erro";
+        return;
+    }
+
+    long long currentSalary;
+    char firm[MAX];
+    int colegues;
+    int vac;
+
+    int i = 0;
+
+    do
+    {
+        ifs >> firm;
+
+        ifs >> colegues;
+
+        ifs >> vac;
+
+        ifs >> currentSalary;
+
+        if (minSalary <= currentSalary)
+        {
+            std::cout << "Name " << firm << std::endl;
+            std::cout << "Colegues " << colegues << std::endl;
+            std::cout << "Vacantion " << vac << std::endl;
+            std::cout << "Salary " << currentSalary << std::endl;
+        }
+        
+        i += 1;
+
+    } while (numberOffers > i);
+}
+
+void existOffer(const char* filePath, const char* name)
+{
+    std::ifstream ifs(filePath, std::ios::binary);
+
+    if (!ifs.is_open())
+    {
+        std::cout << "Erro";
+    }
+
+    long long currentSalary;
+    char firm[MAX];
+    int colegues;
+    int vac;
+
+    do
+    {
+        ifs >> firm;
+
+        ifs >> colegues;
+
+        ifs >> vac;
+
+        ifs >> currentSalary;
+
+        if (firm == name)
+        {
+            std::cout << "true";
+        }
+
+        
+    } while (!ifs.eof());
+
+    std::cout << "false";
+}
+
+void writeOffersToFile(jobOffer offers[MAX], int numberOffers)
+{
+    std::ofstream ofs(filePath, std::ios::binary);
+
+    if (!ofs.is_open())
+    {
+        std::cout << "Error";
+        return;
+    }
+
+    for (int i = 0; i < numberOffers; i++)
+    {
+          ofs << offers[i].companyName;
+          ofs << " ";
+          ofs << offers[i].numberOfTeamMembers;
+          ofs << " ";
+          ofs << offers[i].vacationDays;
+          ofs << " ";
+          ofs << offers[i].salary;
+          ofs << std::endl;
+    }
+
+    filterOffers(filePath, 0, numberOffers);
+    std::cout << std::endl;
+    existOffer(filePath, name);
+}
+
+void generateOffer(jobOffer offers[MAX], int numberOffers)
+{
+
+    for (int i = 0; i < numberOffers; i++)
+    {
+        std::cin.ignore();
+
+        std::cout << "Enter company name" << std::endl;
+        std::cin.getline(offers[i].companyName, 26);
+
+        std::cout << "Enter number of colleagues" << std::endl;
+        std::cin >> offers[i].numberOfTeamMembers;
+
+        std::cout << "Enter number of vacantion days" << std::endl;
+        std::cin >> offers[i].vacationDays;
+
+        std::cout << "Enter salary" << std::endl;
+        std::cin >> offers[i].salary;
+    }
+
+    writeOffersToFile(offers, numberOffers);
+}
+
+int main()
+{
+    jobOffer offers[MAX];
+    int numberOffers;
+    std::cout << "Enter number of offers" << std::endl;
+    std::cin >> numberOffers;
+
+    generateOffer(offers, numberOffers);
+}
