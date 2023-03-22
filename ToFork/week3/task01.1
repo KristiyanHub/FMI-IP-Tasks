@@ -68,27 +68,14 @@ void readStudentFromFile(int numberOfStudents)
         return;
     }
 
-    char firstName[17];
-    char secondName[17];
-    int fcNumber;
-    double averageGrades;
-    int color;
+    char getStudent[100];
 
     do
     {
-        std::cout << "Our student is: " << std::endl;
+        ifs >> getStudent;
 
-        ifs >> firstName;
-        std::cout << "First name: " << firstName << std::endl;
-        ifs >> secondName;
-        std::cout << "Second name: " << secondName << std::endl;
-        ifs >> fcNumber;
-        std::cout << "Faculty number: " << fcNumber << std::endl;
-        ifs >> averageGrades;
-        std::cout << "Average grade: " << averageGrades << std::endl;
-        ifs >> color;
-        std::cout << "Hair color: " << color << std::endl;
-    } while (ifs.eof());
+        std::cout << "Our student is: " << getStudent << std::endl;
+    } while (!ifs.eof());
 
     ifs.close();
 }
@@ -106,13 +93,13 @@ void writeStudentToFile(Student student[1024], int numberOfStudents)
     for (int i = 0; i < numberOfStudents; i++)
     {
         ofs << student[i].firstName;
-        ofs << ", " ;
+        ofs << "|";
         ofs << student[i].secondName;
-        ofs << ", ";
+        ofs << "|";
         ofs << student[i].fcNumber;
-        ofs << ", ";
+        ofs << "|";
         ofs << student[i].averageGrades;
-        ofs << ", ";
+        ofs << "|";
         ofs << student[i].color;
         ofs << std::endl;
     }
