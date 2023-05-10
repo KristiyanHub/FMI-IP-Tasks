@@ -190,14 +190,14 @@ public:
 
         try
         {
-            double canBeUsed = fuel;
+            float canBeUsed = fuel;
 
             if (canBeUsed < toUse)
             {
                 throw(canBeUsed);
             }
         }
-        catch (double canBeUsed)
+        catch (float canBeUsed)
         {
             throw "insufficient_fuel_error";
         }
@@ -242,7 +242,40 @@ private:
     float weightInKG;
 
 public:
+
+    //create constructor for all of the above later ^^^
+
+    const FuelTank& getFuelTank()
+    {
+        return this->currentTank;
+    }
+
+    void drive(float km, FuelTank currentFuel)
+    {
+        kilometersPassed += km;
+        currentFuel.FuelTankUse(km);
+    }
 };
+
+Car* dragRace(Car* car1, Car* car2)
+{
+    if (car1->drive <= 0)
+    {
+        return car2;
+    }
+    else if (car1->drive == 0 && car2->drive == 0)
+    {
+        return nullptr;
+    }
+    else
+    {
+        return car1;
+    }
+
+
+    
+}
+
 
 int main()
 {
